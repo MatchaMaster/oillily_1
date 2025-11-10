@@ -1,0 +1,66 @@
+@charset "UTF-8";
+body {
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+body #wrap header .noti {
+  padding: 5px 0;
+  text-align: center;
+  color: #fff;
+  background-color: #1C1B1F;
+}
+body #wrap header .noti a {
+  font-size: 0.75rem;
+  color: #fff;
+}
+body #wrap header .noti button {
+  color: blue;
+}
+body #wrap header {
+  /* 상단메뉴 */
+}
+body #wrap header nav {
+  background-color: aqua;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+body #wrap header nav .logo {
+  margin-right: auto;
+}
+body #wrap header nav .logo a img {
+  width: 145px;
+  height: 56px;
+}
+body #wrap header nav .gnb {
+  padding-right: 80px;
+  border-right: solid #1C1B1F;
+  display: flex;
+  gap: 80px;
+}
+body #wrap header nav .gnb li a {
+  font-weight: 500;
+}
+body #wrap header nav .gnb_about {
+  padding-left: 80px;
+  display: flex;
+  gap: 22px;
+}
+body #wrap header nav .gnb_about li a {
+  font-weight: 500;
+}
+body #wrap header nav .my_box {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+body #wrap .sub_category {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+/*# sourceMappingURL=index.css.map */

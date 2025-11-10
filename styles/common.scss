@@ -1,0 +1,39 @@
+$color-new:#2E68BF;
+$color-hydrate:#35a8f1;
+$color-white:#ffff;
+$color-black:#000;
+$color-navy:#2a3f48;
+$color-gray:#636363;
+$color-grayv2:#434343;
+$color-grayv3:#6d7175;
+
+$font-size-30:1.875rem;
+$font-size-23:1.438rem;
+$font-size-19:1.188rem;
+$font-size-17:1.063rem;
+$font-size-16:1rem;
+$font-size-14:0.875rem;
+$font-size-12:0.75rem;
+
+$weight-bold:700;
+$weight-semibold:600;
+$weight-medieum:500;
+
+@mixin flex-row{ 
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+@mixin flex-col{ 
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+@mixin img100Percent {width:100%; height:auto;}
+@mixin overview {width:860px; height:860px;}
+@mixin thumnail {width:100px; height:100px;}
+@mixin icon48 {width:48px; height:48px;}
+@mixin icon24 {width:24px; height:24px; display:inline-block;}
+@mixin icon20 {width:20px; height:20px; display:inline-block;}
+@mixin icon18 {width:18px; height:18px; }
+@mixin icon14 {width:14px; height:14px; display:inline-block;}
