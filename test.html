@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oillily Korea</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/test.css">
+    <script src="scripts/test.js" defer></script>
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<!-- 상품이미지 스와이퍼 테스트 -->
+<section id="newarrivals">
+    <div class="inner">
+        <div class="category_menu">
+            <h2>NEW ARRIVALS FOR</h2>
+            <ul>
+                <li class="active" data-category="men">MEN</li>
+                <li data-category="women">WOMEN</li>
+                <li data-category="jeans">GUESS JEANS</li>
+                <li data-category="acc">ACC</li>
+            </ul>
+        </div>
+
+        <div class="product_slider">
+            <div class="swiper newSwiper men">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/products/pro1.png" alt="">
+                        <p>[Featherlight] 남녀공용 무스탕 푸퍼_BROWN</p>
+                        <span>399,000 원</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/products/pro2.png" alt="">
+                        <p>[Featherlight] 남성 변형 절개 푸퍼_BLACK</p>
+                        <span>399,000 원</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/products/pro3.png" alt="">
+                        <p>[Featherlight] 남성 구름 다운 푸퍼_GREY</p>
+                        <span>399,000 원</span>
+                    </div>
+                </div>
+            </div>
+            <!-- women -->
+            <div class="swiper newSwiper women" style="display: none;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/products/women1.png" alt="">
+                        <p>[Featherlight] 여성 숏 패딩_WHITE</p>
+                        <span>359,000 원</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+<!-- 텀블벅 스와이퍼 기본예제 -->
+<!-- <body>
+    <section id="tumblbug">
+        <div class="swiper" id="tumblbug_swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ad1"><a href="#"><img src="images/main_images/main1.png" alt=""></a></div>
+                <div class="swiper-slide ad2"><a href="#"><img src="images/main_images/main2.jpg" alt=""></a></div>
+                <div class="swiper-slide ad2"><a href="#"><img src="images/main_images/main3.jpg" alt=""></a></div>
+            </div>
+            <div class="controls">
+                <div class="swiper-pagination"></div>
+                <div class="button">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body> -->
+<!-- 메인에서 쓴 슬라이드 -->
+<!-- <section id="main_visual">
+    <div class="swiper1" id="main_visual_swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ad1"><a href="#"><img src="images/main_images/main1.png" alt=""></a></div>
+            <div class="swiper-slide ad2"><a href="#"><img src="images/main_images/main2.jpg" alt=""></a></div>
+            <div class="swiper-slide ad3"><a href="#"><img src="images/main_images/main3.jpg" alt=""></a></div>
+        </div>
+        <div class="slideBtn">
+            <button class="slidedot active"></button>
+            <button class="slidedot"></button>
+            <button class="slidedot"></button>
+        </div>
+    </div>
+</section> -->
+
+<!-- transition-duration: 0ms; transform: translate3d(0px, -72px, 0px); -->

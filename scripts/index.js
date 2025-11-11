@@ -1,0 +1,73 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // =========================
+    // 메인 비주얼 슬라이더
+    // =========================
+    const mainSwiper = new Swiper("#main_visual_swiper", {
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        speed: 800,
+        pagination: {
+            el: "#main_visual_swiper .slideBtn",
+            clickable: true,
+            bulletClass: "slidedot",
+            bulletActiveClass: "active",
+            renderBullet: function (index, className) {
+                return `<button class="${className}"></button>`;
+            },
+        },
+    });
+
+    // =========================
+    // NEW ARRIVALS 상품 슬라이더
+    // =========================
+    const sliders = document.querySelectorAll(".product_slider");
+    const swiperInstances = {};
+
+    sliders.forEach((slider) => {
+        const key = slider.dataset.category;
+        swiperInstances[key] = new Swiper(slider, {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: slider.querySelector(".swiper-button-next"),
+                prevEl: slider.querySelector(".swiper-button-prev"),
+            },
+        });
+    });
+
+    // =========================
+    // 카테고리 클릭 시 슬라이더 전환
+    // =========================
+    const categoryBtns = document.querySelectorAll(".category_menu li");
+
+    categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            // active 교체
+            categoryBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const target = btn.dataset.category;
+
+            sliders.forEach((slider) => {
+                slider.style.display =
+                    slider.dataset.category === target ? "block" : "none";
+            });
+        });
+    });
+});
+
+// =========================
+// 스크롤 시 상단 공지 숨기기
+// =========================
+window.addEventListener("scroll", function () {
+    const noti = document.querySelector(".noti");
+    if (!noti) return;
+    if (window.scrollY > 50) {
+        noti.classList.add("hidden");
+    } else {
+        noti.classList.remove("hidden");
+    }
+});
