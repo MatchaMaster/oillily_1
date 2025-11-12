@@ -1,9 +1,11 @@
 body {
-    max-width: 1920px;
-    min-width: 320px;
-    margin: 0 auto;
     font-family: 'Noto Sans KR', sans-serif;
     color: #1C1B1F;
+    overflow-x: hidden;
+    > * {
+        width: 1920px;
+        min-width: 1800px;
+    }
     #wrap {
         overflow-x: hidden;
         overflow-y: hidden;
@@ -276,3 +278,14 @@ body {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

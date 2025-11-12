@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oillily Korea</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <script src="scripts/index.js" defer></script>
-    <!--플러그인 필수 css cdn 연결-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>    
-</head>
 <body>
     <div id="wrap">
         <header>
@@ -155,165 +141,233 @@
                     </div>
                 </div>
             </div>
-            <div id="page4">
-                <section id="ourbest">
-                    <div class="page3_title">
-                        <h2>Our Best</h2>
-                        <p>전체보기</p>
-                    </div>
-                    <div class="best_pro_slider_wrap">
-                        <!-- 버튼은 래퍼 안, swiper 밖 -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper best_pro_slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="product">
-                                        <span class="rank">1</span>
-                                        <a href="#"><img src="images/products/pro1.png" alt=""></a>
-                                        <div class="price">
-                                            <div class="name_like">
-                                                <p>카키파카</p>
+            <div id="page3">
+                <section id="newarrivals">
+                    <div class="inner">
+                        <div class="category_menu">
+                            <h2>NEW ARRIVALS FOR</h2>
+                            <ul>
+                                <li class="active" data-category="women">WOMEN</li>
+                                <li data-category="kids">KIDS</li>
+                                <li data-category="bags">BAGS</li>
+                                <li data-category="outlet">OUTLET</li>
+                                <li data-category="living">LIVING</li>
+                                <li data-category="sporty">SPORTY ON</li>
+                            </ul>
+                        </div>
+                        <!-- 상품 슬라이더 -->
+                        <div class="product_slider_wrap">
+                            <!-- women -->
+                            <div class="swiper product_slider" data-category="women">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <a href="#"><img src="images/products/pro1.png" alt=""></a>
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
                                                 <div class="icons">
                                                     <img src="images/icons/like.png" alt="" class="wish" />
                                                     <img src="images/icons/cart.png" alt="" class="cart" />
                                                 </div>
                                             </div>
-                                            <div class="pro_price">
+                                            <div class="price">
                                                 <p>310,000 원</p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product">
-                                        <span class="rank">1</span>
-                                        <a href="#"><img src="images/products/pro1.png" alt=""></a>
-                                        <div class="price">
-                                            <div class="name_like">
-                                                <p>카키파카</p>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <a href="#"><img src="images/products/pro1.png" alt=""></a>
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
                                                 <div class="icons">
                                                     <img src="images/icons/like.png" alt="" class="wish" />
                                                     <img src="images/icons/cart.png" alt="" class="cart" />
                                                 </div>
                                             </div>
-                                            <div class="pro_price">
+                                            <div class="price">
                                                 <p>310,000 원</p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product">
-                                        <span class="rank">1</span>
-                                        <a href="#"><img src="images/products/pro1.png" alt=""></a>
-                                        <div class="price">
-                                            <div class="name_like">
-                                                <p>카키파카</p>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <a href=""><img src="images/products/pro2.png" alt=""></a>
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
                                                 <div class="icons">
                                                     <img src="images/icons/like.png" alt="" class="wish" />
                                                     <img src="images/icons/cart.png" alt="" class="cart" />
                                                 </div>
                                             </div>
-                                            <div class="pro_price">
-                                                <p>310,000 원</p>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product">
-                                        <span class="rank">1</span>
-                                        <a href="#"><img src="images/products/pro1.png" alt=""></a>
-                                        <div class="price">
-                                            <div class="name_like">
-                                                <p>카키파카</p>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
                                                 <div class="icons">
                                                     <img src="images/icons/like.png" alt="" class="wish" />
                                                     <img src="images/icons/cart.png" alt="" class="cart" />
                                                 </div>
                                             </div>
-                                            <div class="pro_price">
-                                                <p>310,000 원</p>
-                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
+                                                <div class="icons">
+                                                    <img src="images/icons/like.png" alt="" class="wish" />
+                                                    <img src="images/icons/cart.png" alt="" class="cart" />
+                                                </div>
+                                            </div>        
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product">
-                                        <span class="rank">1</span>
-                                        <a href="#"><img src="images/products/pro1.png" alt=""></a>
-                                        <div class="price">
-                                            <div class="name_like">
-                                                <p>카키파카</p>
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
                                                 <div class="icons">
                                                     <img src="images/icons/like.png" alt="" class="wish" />
                                                     <img src="images/icons/cart.png" alt="" class="cart" />
                                                 </div>
                                             </div>
-                                            <div class="pro_price">
-                                                <p>310,000 원</p>
-                                            </div>
                                         </div>
-                                    </div>
+                                    </div>    
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="product">
-                                        <span class="rank">1</span>
-                                        <a href="#"><img src="images/products/pro1.png" alt=""></a>
-                                        <div class="price">
-                                            <div class="name_like">
-                                                <p>카키파카</p>
-                                                <div class="icons">
-                                                    <img src="images/icons/like.png" alt="" class="wish" />
-                                                    <img src="images/icons/cart.png" alt="" class="cart" />
-                                                </div>
-                                            </div>
-                                            <div class="pro_price">
-                                                <p>310,000 원</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="product">
-                                        <span class="rank">1</span>
-                                        <a href="#"><img src="images/products/pro1.png" alt=""></a>
-                                        <div class="price">
-                                            <div class="name_like">
-                                                <p>카키파카</p>
-                                                <div class="icons">
-                                                    <img src="images/icons/like.png" alt="" class="wish" />
-                                                    <img src="images/icons/cart.png" alt="" class="cart" />
-                                                </div>
-                                            </div>
-                                            <div class="pro_price">
-                                                <p>310,000 원</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- swiper-slide 반복 -->
+                            <div class="slider_buttons">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
                             </div>
+                            </div>
+                            <!-- kids -->
+                            <!-- <div class="swiper product_slider" data-category="kids" style="display:none;">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
+                                                <div class="icons">
+                                                    <img src="images/icons/like.png" alt="" class="wish" />
+                                                    <img src="images/icons/cart.png" alt="" class="cart" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div> -->
+                            <!-- bag -->
+                            <!-- <div class="swiper product_slider" data-category="bags" style="display:none;">
+                                <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
+                                                <div class="icons">
+                                                    <img src="images/icons/like.png" alt="" class="wish" />
+                                                    <img src="images/icons/cart.png" alt="" class="cart" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div> -->
+                            <!-- 아울렛 -->
+                            <!-- <div class="swiper product_slider" data-category="outlet" style="display:none;">
+                                <div class="swiper-wrapper">
+                                                                        <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
+                                                <div class="icons">
+                                                    <img src="images/icons/like.png" alt="" class="wish" />
+                                                    <img src="images/icons/cart.png" alt="" class="cart" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div> -->
+                            <!-- 리빙 -->
+                           <!--  <div class="swiper product_slider" data-category="living" style="display:none;">
+                                <div class="swiper-wrapper">
+                                                                        <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
+                                                <div class="icons">
+                                                    <img src="images/icons/like.png" alt="" class="wish" />
+                                                    <img src="images/icons/cart.png" alt="" class="cart" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div> -->
+                            <!-- 스포츠 -->
+<!--                             <div class="swiper product_slider" data-category="sporty" style="display:none;">
+                                <div class="swiper-wrapper">
+                                                                        <div class="swiper-slide">
+                                        <div class="product">
+                                            <img src="images/products/pro1.png" alt="여성상품1">
+                                            <div class="info">
+                                                <p class="name">카키파카</p>
+                                                <p class="price">310,000 원</p>
+                                                <div class="icons">
+                                                    <img src="images/icons/like.png" alt="" class="wish" />
+                                                    <img src="images/icons/cart.png" alt="" class="cart" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div> -->
                         </div>
-                        <div class="swiper-button-next"></div>
-                        </div>
+                    </div>
                 </section>
             </div>
             <div id="page5">
                 <div class="infi_bnr"></div>
-                <div class="page5_contents">
-                    <div class="page5_title">
-                        <h2 class="lookbook">LookBook</h2>
-                        <span><a href=""></a>전체보기</span>
-                    </div>
-                    <div class="lookpics">
-                        <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
-                        <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
-                        <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
-                        <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
-                    </div>
+                <div class="page5_title">
+                    <h2 class="lookbook">LookBook</h2>
+                    <span><a href=""></a>전체보기</span>
+                </div>
+                <div class="lookpics">
+                    <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
+                    <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
+                    <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
+                    <a href="#"><img src="./images/LookBook/048373317627f283fc0e6a6f0208367f.jpg" alt=""></a>
                 </div>
             </div>
+            
         </main>
     </div>
 </body>
+
+</html>

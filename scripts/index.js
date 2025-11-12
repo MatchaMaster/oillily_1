@@ -20,45 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
-    // =========================
-    // NEW ARRIVALS 상품 슬라이더
-    // =========================
-    const sliders = document.querySelectorAll(".product_slider");
-    const swiperInstances = {};
-
-    sliders.forEach((slider) => {
-        const key = slider.dataset.category;
-        swiperInstances[key] = new Swiper(slider, {
-            slidesPerView: 4,
-            spaceBetween: 20,
-            navigation: {
-                nextEl: slider.querySelector(".swiper-button-next"),
-                prevEl: slider.querySelector(".swiper-button-prev"),
-            },
-        });
-    });
-
-    // =========================
-    // 카테고리 클릭 시 슬라이더 전환
-    // =========================
-    const categoryBtns = document.querySelectorAll(".category_menu li");
-
-    categoryBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            // active 교체
-            categoryBtns.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            const target = btn.dataset.category;
-
-            sliders.forEach((slider) => {
-                slider.style.display =
-                    slider.dataset.category === target ? "block" : "none";
-            });
-        });
-    });
-});
-
 // =========================
 // 스크롤 시 상단 공지 숨기기
 // =========================
@@ -71,3 +32,45 @@ window.addEventListener("scroll", function () {
         noti.classList.remove("hidden");
     }
 });
+// =========================
+// 베스트상품 슬라이더 (순정버전)
+// =========================
+//on.init → 초기화 시 prev 버튼 숨김
+
+//on.slideChange → 첫 슬라이드면 숨기고, 아니면 보이게
+
+//slider.querySelector() 써서 각 슬라이더별 버튼 구분됨 (버튼 중복 안됨)
+
+const bestSwiper = new Swiper(".best_pro_slider", {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: ".best_pro_slider_wrap .swiper-button-next",
+        prevEl: ".best_pro_slider_wrap .swiper-button-prev",
+    },
+    on: {
+        init: function () {
+            // 초기화 시 prev 버튼 숨기기
+            if (this.navigation.prevEl) {
+                this.navigation.prevEl.style.display = "none";
+            }
+        },
+        slideChange: function () {
+            // 첫 슬라이드면 prev 숨기고, 아니면 표시
+            if (this.activeIndex === 0) {
+                this.navigation.prevEl.style.display = "none";
+            } else {
+                this.navigation.prevEl.style.display = "block";
+            }
+            if (this.activeIndex >= this.slides.length - this.params.slidesPerView) {
+                this.navigation.nextEl.style.display = "none";
+            } else {
+                this.navigation.nextEl.style.display = "block";
+            }
+        },
+    },
+});
+
+
+});
+

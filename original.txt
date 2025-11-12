@@ -1,0 +1,815 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #1C1B1F;
+    overflow-x: hidden;
+    width: 1920px;
+    margin: 0 auto;
+    >* { /* body의 모든 직계 자식 요소 (Header, Main, Footer 등) */
+        width: 1920px;
+        min-width: 1800px;
+    }
+    #wrap {
+        header {
+            .noti {
+                height: 25px;
+                padding: 5px 0;
+                text-align: center;
+                background-color: #1C1B1F;
+                color: #fff;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                &.hidden {
+                    height: 0;
+                    opacity: 0;
+                    padding: 0;
+                }
+                a {
+                    color: #fff;
+                    font-size: 0.75rem;
+                }
+                button {
+                    background: none;
+                    border: none;
+                    color: #fff;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+            }
+            // .noti
+            nav {
+                /* 주의: width 중복 제거(원래 코드에 2번 있어서 하나만 남김) */
+                width: 100%;
+                min-width: 1800px;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: #fff;
+                padding: 0 80px;
+                border-bottom: 1px solid #ddd;
+                z-index: 1000;
+                .logo img {
+                    width: 145px;
+                    height: 56px;
+                }
+                .gnb {
+                    display: flex;
+                    gap: 90px;
+                    list-style: none;
+                    li a {
+                        display: inline-block;
+                        padding: 20px 0;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        color: #222;
+                        text-decoration: none;
+                        &:hover {
+                            color: #b11f2c;
+                        }
+                    }
+                }
+                // .gnb
+                .my_box {
+                    display: flex;
+                    gap: 15px;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+                // .my_box
+                /* --- 전체 서브메뉴 --- */
+                .sub_wrap {
+                    justify-content: center;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.8);
+                    border-top: 1px solid #ddd;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+                    padding: 25px 0px;
+                    display: none;
+                    z-index: 10;
+                    .sub_width {
+                        display: flex;
+                        width: 1148px;
+                        height: auto;
+                        .sub {
+                            list-style: none;
+                            li a {
+                                display: block;
+                                padding: 5px 0;
+                                font-size: 0.9rem;
+                                color: #333;
+                                text-decoration: none;
+                                transition: 0.2s;
+                                &:hover {
+                                    color: #b11f2c;
+                                }
+                            }// li a
+                        }
+                        // .sub
+                    }
+                    // .sub_width
+                }
+                // .sub_wrap
+                /* GNB hover 시 서브메뉴 전체 오픈 */
+                .gnb:hover~.sub_wrap {
+                    display: flex;
+                }
+            }
+            // nav
+        }
+        // header
+        main {
+            #main_visual {
+                overflow: hidden;
+                position: relative;
+                .swiper1 {
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 98vh;
+                    }
+                    .slideBtn {
+                        justify-content: center;
+                        position: absolute;
+                        bottom: 30px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        gap: 10px;
+                        z-index: 20;
+                        .slidedot {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            border: none;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            &.active {
+                                background-color: #b11f2c;
+                                transform: scale(1.3);
+                            }
+                        }
+                        // .slidedot
+                    }
+                    // .slideBtn
+                }
+                // .swiper1
+            }
+            // #main_visual
+            #page2 {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                background: url('/images/main_images/page2main.png') no-repeat center/cover;
+                height: auto;
+                /* 이미지 높이에 맞게 설정 */
+                .page2_contents {
+                    position: relative;
+                    z-index: 5;
+                    .bundle_1 {
+                        display: flex;
+                        .page2_1_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(227, 104, 136, 0.95);
+                            .newstyle {
+                                color: #fff;
+                                text-align: left;
+                            }
+                            .p2-1bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .newstyle_en {
+                                    color: #fff;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }
+                            // .p2-1bot
+                        }
+                        // .page2_1_txt
+                        .page2_2_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(248, 191, 215, 0.95);
+                            .fallstyle {
+                                color: #1C1B1F;
+                                text-align: left;
+                            }
+                            .p2-2bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .fallstyle_en {
+                                    color: #1C1B1F;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }
+                            // .p2-2bot
+                        }
+                        // .page2_2_txt
+                    }
+                    // .bundle_1
+                    .bundle_2 {
+                        display: flex;
+                        .page2_3_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(180, 181, 52, 0.95);
+                            .salestyle {
+                                color: #1C1B1F;
+                                text-align: left;
+                            }
+                            .p2-3bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .salestyle_en {
+                                    color: #1C1B1F;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }
+                            // .p2-3bot
+                        }
+                        // .page2_3_txt
+                        .page2_4_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(245, 140, 33, 0.95);
+                            .kidsstyle {
+                                color: #fff;
+                                text-align: left;
+                            }
+                            .p2-4bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .kidsstyle_en {
+                                    color: #fff;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }
+                            // .p2-4bot
+                        }
+                        // .page2_4_txt
+                    }
+                    // .bundle_2
+                }
+                // .page2_contents
+            }
+            // #page2
+            #page3 {
+                position: relative;
+                padding: 150px 0;
+                #newarrivals {
+                    .inner {
+                        width: 100%;
+                        .category_menu {
+                            text-align: center;
+                            margin-bottom: 40px;
+                            h2 {
+                                font-size: 1.8rem;
+                                margin-bottom: 30px;
+                            }
+                            ul {
+                                display: flex;
+                                justify-content: center;
+                                gap: 20px;
+                                li {
+                                    font-size: 1rem;
+                                    font-weight: 400;
+                                    cursor: pointer;
+                                    cursor: pointer;
+                                    padding: 8px 14px;
+                                    border-bottom: 2px solid transparent;
+                                    transition: all 0.3s ease;
+                                    &.active {
+                                        color: #b11f2c;
+                                        font-weight: 600;
+                                    }
+                                }// li
+                            }// ul
+                        }
+                        // .category_menu
+                        .product_slider_wrap {
+                            position: relative;
+                            width: 1620px;
+                            margin: 0 auto;
+                            .swiper {
+                                width: 100%;
+                                overflow: hidden;
+                                .swiper-wrapper {
+                                    .swiper-slide {
+                                        .product {
+                                            width: 300px;
+                                            height: auto;
+                                            text-align: left;
+                                            img {
+                                                border-radius: 8px;
+                                                transition: transform 0.3s ease;
+                                                &:hover {
+                                                    transform: scale(1.05);
+                                                }
+                                            }// img
+                                            .info {
+                                                padding: 5px 10px;
+                                                display: flex;
+                                                justify-content: space-between;
+                                                margin-top: 10px;
+                                                .name {
+                                                font-weight: 500;
+                                                color: #333;
+                                                }
+                                                .icons {
+                                                    display: flex;
+                                                    gap: 10px;
+                                                    img {
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        cursor: pointer;
+                                                        transition: all 0.2s ease;
+                                                        &:hover {
+                                                            transform: scale(1.2);
+                                                            opacity: 0.8;
+                                                        }
+                                                    }// icons img
+                                                }
+                                                // .icons
+                                            } // .info
+                                            .price {
+                                                padding: 5px 10px;
+                                            }
+                                        }
+                                        // .product
+                                    }
+                                    // .swiper-slide
+                                }
+                                // .swiper-wrapper
+                            }// .swiper
+                            .slider_buttons {
+                                justify-content: space-between;
+                                .swiper-button-prev,
+                                .swiper-button-next {
+                                    color: #b11f2c;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                        }
+
+                        // .product_slider_wrap
+                    }
+
+                    // .inner
+                }
+
+                // #newarrivals
+            }// #page3
+            #page5 {
+                .infi_bnr {
+                    background-color: #1C1B1F;
+                    height: 27px;
+                    background-image: url(/images/icons/txt_infi.png);
+                    background-repeat: repeat-x; // 중요!! 반복되어야 자연스럽게 흘러감
+                    animation: infiniteScroll 5s linear infinite; // 이름도 바꾸고 반복 추가
+                }
+                @keyframes infiniteScroll {
+                    from {
+                        background-position: 0 0;
+                    }
+                    to {
+                        background-position: -100px 0; // ← 단위 꼭 필요!
+                    }
+                }
+                .page5_title {
+                    display: flex;
+                    ju
+                    .lookbook {}
+                    .span {
+                        a {}
+                    }
+                }
+                .lookpics {
+                    padding: 30px 150px 100px;
+                    gap: 10px;
+                    justify-content: center;
+                    display: flex;
+
+                    a img {
+                        width: 400px;
+                        height: 550px;
+                    }
+                }
+            }
+
+            // #page5
+        }
+
+        // main
+    }
+
+    // #wrap
+}
+
+// body
+
+\
+sass
+body {
+    background-color: aqua;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #1C1B1F;
+    overflow-x: hidden;
+    >* { 
+        width: 100%;
+        min-width: 1800px;
+    }
+    #wrap {
+        header {
+            .noti {
+                height: 25px;
+                padding: 5px 0;
+                text-align: center;
+                background-color: #1C1B1F;
+                color: #fff;
+                transition: all 0.3s ease;
+                &.hidden {
+                    height: 0;
+                    opacity: 0;
+                    padding: 0;
+                }
+                a {
+                    color: #fff;
+                    font-size: 0.75rem;
+                }
+                button {
+                    background: none;
+                    border: none;
+                    color: #fff;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+            }//noti
+            nav {
+                /* 주의: width 중복 제거(원래 코드에 2번 있어서 하나만 남김) */
+                width: 100%;
+                min-width: 1800px;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: #fff;
+                padding: 0 80px;
+                border-bottom: 1px solid #ddd;
+                z-index: 1000;
+                .logo img {
+                    width: 145px;
+                    height: 56px;
+                }
+                .gnb {
+                    display: flex;
+                    gap: 90px;
+                    list-style: none;
+                    li a {
+                        display: inline-block;
+                        padding: 20px 0;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        color: #222;
+                        text-decoration: none;
+                        &:hover {
+                            color: #b11f2c;
+                        }
+                    }//gnb > li
+                }//gnb
+                .my_box {
+                    display: flex;
+                    gap: 15px;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }//my_box
+                /* --- 전체 서브메뉴 --- */
+                .sub_wrap {
+                    justify-content: center;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.8);
+                    border-top: 1px solid #ddd;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+                    padding: 25px 0px;
+                    display: none;
+                    z-index: 10;
+                    .sub_width {
+                        display: flex;
+                        width: 1148px;
+                        height: auto;
+                        .sub {
+                            list-style: none;
+                            li a {
+                                display: block;
+                                padding: 5px 0;
+                                font-size: 0.9rem;
+                                color: #333;
+                                text-decoration: none;
+                                transition: 0.2s;
+                                &:hover {
+                                    color: #b11f2c;
+                                }
+                            }//li a
+                        }//sub
+                    }//sub_width
+                }//sub_wrap
+                /* GNB hover 시 서브메뉴 전체 오픈 */
+                .gnb:hover~.sub_wrap {
+                    display: flex;
+                }
+            }//nav
+        }//header
+        /* 메인시작 */
+        main {
+            #main_visual {
+                overflow: hidden;
+                position: relative;
+                .swiper1 {
+                    img {
+                        display: block;
+                        height: 98vh;
+                    }
+                    .slideBtn {
+                        justify-content: center;
+                        position: absolute;
+                        bottom: 30px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        gap: 10px;
+                        z-index: 20;
+                        .slidedot {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            border: none;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            &.active {
+                                background-color: #b11f2c;
+                                transform: scale(1.3);
+                            }
+                        }//slidedot
+                    }//slideBtn
+                }//swiper1
+            } //#main_visual
+            #page2 {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                background: url('/images/main_images/page2main.png') no-repeat center/cover;
+                height: auto;
+                .page2_contents {
+                    position: relative;
+                    z-index: 5;
+                    .bundle_1 {
+                        display: flex;
+                        .page2_1_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(227, 104, 136, 0.95);
+                            .newstyle {
+                                color: #fff;
+                                text-align: left;
+                            }
+                            .p2-1bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .newstyle_en {
+                                    color: #fff;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }// .p2-1bot
+                        }//page2_1_txt
+                        .page2_2_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(248, 191, 215, 0.95);
+                            .fallstyle {
+                                color: #1C1B1F;
+                                text-align: left;
+                            }
+                            .p2-2bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .fallstyle_en {
+                                    color: #1C1B1F;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }// .p2-2bot
+                        }// .page2_2_txt
+                    }//bundle_1
+                    .bundle_2 {
+                        display: flex;
+                        .page2_3_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(180, 181, 52, 0.95);
+                            .salestyle {
+                                color: #1C1B1F;
+                                text-align: left;
+                            }
+                            .p2-3bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .salestyle_en {
+                                    color: #1C1B1F;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }
+                            // .p2-3bot
+                        }
+                        // .page2_3_txt
+                        .page2_4_txt {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 380px;
+                            padding: 30px 40px;
+                            background-color: rgba(245, 140, 33, 0.95);
+                            .kidsstyle {
+                                color: #fff;
+                                text-align: left;
+                            }
+                            .p2-4bot {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                .kidsstyle_en {
+                                    color: #fff;
+                                }
+                                a img {
+                                    /* 오른쪽 */
+                                }
+                            }// .p2-4bot
+                        }// .page2_4_txt
+                    }// .bundle_2
+                }//page2_contents
+            }//page2
+            #page4 {
+                background-color: aquamarine;
+                padding: 50px 150px;
+                #ourbest {
+                    .page3_title {
+                        display: flex;
+                        justify-content: space-between;
+                        h2 {
+                            font-size: 1.8rem;
+                            margin-bottom: 30px;
+                        }
+                        p {}
+                    }//.page3_title 
+                    .best_pro_slider_wrap {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        .swiper-button-prev,
+                        .swiper-button-next {
+                            color: #b11f2c;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            z-index: 10;
+                        }
+                        .swiper-button-prev { left: -40px; }
+                        .swiper-button-next { right: -40px; }
+                        .best_pro_list {
+                            display: flex;
+                            gap: 30px;
+                            list-style: none;
+                            .product {
+                                width: 300px;
+                                position: relative;
+                                .rank {
+                                    position: absolute;
+                                    top: 5px;
+                                    left: 5px;
+                                    background: #1C1B1F;
+                                    color: #fff;
+                                    width: 28px;
+                                    height: 28px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    font-weight: 500;
+                                    z-index: 50;
+                                }//rank
+                                .best_pro {
+                                    transition: transform 0.3s ease;
+                                    &:hover {
+                                    transform: scale(1.0);
+                                    }
+                                }
+                                .price {
+                                    padding: 5px;
+                                    text-align: left;
+                                    .name_like {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        margin-bottom: 5px;
+                                        .icons {
+                                            display: flex;
+                                            gap: 5px;
+                                        }
+                                    }
+                                }
+                            }//product
+                        }//best_pro_list
+                    }//.best_pro_slider_wrap
+                }//ourbest
+            }//page4
+            #page5 {
+                .infi_bnr {
+                    background-color: #1C1B1F;
+                    height: 27px;
+                    background-image: url(/images/icons/txt_infi.png);
+                    background-repeat: repeat-x; // 중요!! 반복되어야 자연스럽게 흘러감
+                    animation: infiniteScroll 5s linear infinite; // 이름도 바꾸고 반복 추가
+                }
+                @keyframes infiniteScroll {
+                    from {
+                        background-position: 0 0;
+                    }
+                    to {
+                        background-position: -100px 0; // ← 단위 꼭 필요!
+                    }
+                }//infi_bnr
+                .page5_contents {
+                    padding: 100px 150px;
+                    .page5_title {
+                        display: flex;
+                        justify-content: space-between;
+                        .lookbook {}
+                        .span {
+                            a {}
+                        }
+                    }//#page5_title
+                    .lookpics {
+                        padding: 30px 150px 100px;
+                        gap: 10px;
+                        display: flex;
+                        justify-content: center;
+                        a img {
+                            width: 400px;
+                            height: 550px;
+                        }
+                    }//lookpics
+                }//page5_contents
+            }//#page5
+        }//main
+    }//wrap
+}//body
