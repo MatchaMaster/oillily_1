@@ -1,13 +1,10 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap");
 body {
   background-color: aqua;
   font-family: "Noto Sans KR", sans-serif;
   color: #1C1B1F;
   overflow-x: hidden;
-}
-body > * {
-  width: 100%;
-  min-width: 1800px;
 }
 body #wrap header .noti {
   height: 25px;
@@ -34,86 +31,89 @@ body #wrap header .noti button {
   cursor: pointer;
 }
 body #wrap header nav {
-  /* 주의: width 중복 제거(원래 코드에 2번 있어서 하나만 남김) */
   width: 100%;
   min-width: 1800px;
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: #fff;
   padding: 0 80px;
   border-bottom: 1px solid #ddd;
+  display: grid;
+  grid-template-columns: 145px 1fr 120px;
+  align-items: center;
   z-index: 1000;
-}
-body #wrap header nav .logo img {
-  width: 145px;
-  height: 56px;
+  /* GNB */
 }
 body #wrap header nav .gnb {
-  display: flex;
-  gap: 90px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  text-align: center;
   list-style: none;
 }
-body #wrap header nav .gnb li a {
-  display: inline-block;
-  padding: 20px 0;
-  font-weight: 500;
-  font-size: 1rem;
-  color: #222;
-  text-decoration: none;
-}
-body #wrap header nav .gnb li a:hover {
-  color: #b11f2c;
-}
-body #wrap header nav .my_box {
-  display: flex;
-  gap: 15px;
-}
-body #wrap header nav .my_box img {
-  width: 24px;
-  height: 24px;
-}
 body #wrap header nav {
-  /* --- 전체 서브메뉴 --- */
+  /* 서브메뉴 */
 }
 body #wrap header nav .sub_wrap {
-  justify-content: center;
   position: absolute;
-  left: 0;
   top: 100%;
+  left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 25px 80px;
+  background: rgba(255, 255, 255, 0.9);
   border-top: 1px solid #ddd;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-  padding: 25px 0px;
   display: none;
-  z-index: 10;
-}
-body #wrap header nav .sub_wrap .sub_width {
-  display: flex;
-  width: 1148px;
-  height: auto;
-}
-body #wrap header nav .sub_wrap .sub_width .sub {
-  list-style: none;
-}
-body #wrap header nav .sub_wrap .sub_width .sub li a {
-  display: block;
-  padding: 5px 0;
-  font-size: 0.9rem;
-  color: #333;
-  text-decoration: none;
-  transition: 0.2s;
-}
-body #wrap header nav .sub_wrap .sub_width .sub li a:hover {
-  color: #b11f2c;
+  /* gnb와 완전 동일한 9정렬 */
+  grid-template-columns: repeat(9, 1fr);
+  /* 로고+패딩 만큼 왼쪽에 보정 */
+  padding-left: 225px;
+  padding-right: 120px;
 }
 body #wrap header nav {
-  /* GNB hover 시 서브메뉴 전체 오픈 */
+  /* 각 sub 위치 */
+}
+body #wrap header nav .sub {
+  font-size: 14px;
+  width: 100px;
+  text-align: left;
+  padding-left: 10px;
+}
+body #wrap header nav .sub_women {
+  grid-column: 1;
+}
+body #wrap header nav .sub_kids {
+  grid-column: 2;
+}
+body #wrap header nav .sub_bags {
+  grid-column: 3;
+}
+body #wrap header nav .sub_sportyon {
+  grid-column: 4;
+}
+body #wrap header nav .sub_outlet {
+  grid-column: 5;
+}
+body #wrap header nav .sub_living {
+  grid-column: 6;
+}
+body #wrap header nav .sub_store {
+  grid-column: 7;
+}
+body #wrap header nav .sub_webonly {
+  grid-column: 8;
+}
+body #wrap header nav .sub_story {
+  grid-column: 9;
+}
+body #wrap header nav .sub li a {
+  padding: 5px 0;
+  display: block;
+  color: #333;
+}
+body #wrap header nav .sub li a:hover {
+  color: #b11f2c;
 }
 body #wrap header nav .gnb:hover ~ .sub_wrap {
-  display: flex;
+  display: grid;
 }
 body #wrap {
   /* 메인시작 */
@@ -171,22 +171,14 @@ body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt {
   padding: 30px 40px;
   background-color: rgba(227, 104, 136, 0.95);
 }
-body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt .newstyle {
+body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt .newstyle_en {
+  font-size: 1.875rem;
+  font-family: "Old Zen Mincho", serif;
+  line-height: 160%;
   color: #fff;
-  text-align: left;
-}
-body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt .p2-1bot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt .p2-1bot .newstyle_en {
-  color: #fff;
-}
-body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt .p2-1bot a img {
-  /* 오른쪽 */
 }
 body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -194,20 +186,11 @@ body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt {
   padding: 30px 40px;
   background-color: rgba(248, 191, 215, 0.95);
 }
-body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt .fallstyle {
+body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt .fallstyle_en {
+  font-size: 1.875rem;
+  font-family: "Old Zen Mincho", serif;
+  line-height: 160%;
   color: #1C1B1F;
-  text-align: left;
-}
-body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt .p2-2bot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt .p2-2bot .fallstyle_en {
-  color: #1C1B1F;
-}
-body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt .p2-2bot a img {
-  /* 오른쪽 */
 }
 body #wrap main #page2 .page2_contents .bundle_2 {
   display: flex;
@@ -220,20 +203,11 @@ body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt {
   padding: 30px 40px;
   background-color: rgba(180, 181, 52, 0.95);
 }
-body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt .salestyle {
+body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt .salestyle_en {
+  font-size: 1.875rem;
+  line-height: 160%;
+  font-family: "Old Zen Mincho", serif;
   color: #1C1B1F;
-  text-align: left;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt .p2-3bot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt .p2-3bot .salestyle_en {
-  color: #1C1B1F;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt .p2-3bot a img {
-  /* 오른쪽 */
 }
 body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt {
   display: flex;
@@ -243,68 +217,41 @@ body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt {
   padding: 30px 40px;
   background-color: rgba(245, 140, 33, 0.95);
 }
-body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt .kidsstyle {
+body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt .kidsstyle_en {
+  font-size: 1.875rem;
+  line-height: 160%;
+  font-family: "Old Zen Mincho", serif;
   color: #fff;
-  text-align: left;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt .p2-4bot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt .p2-4bot .kidsstyle_en {
-  color: #fff;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt .p2-4bot a img {
-  /* 오른쪽 */
 }
 body #wrap main #page4 {
-  background-color: aquamarine;
-  padding: 50px 0;
+  margin: 100px 0;
+  text-align: center;
 }
-body #wrap main #page4 #ourbest .page3_title {
+body #wrap main #page4 h2 {
+  margin-bottom: 70px;
+  font-size: 2rem;
+}
+body #wrap main #page4 .more {
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+  text-align: end;
   padding: 0 150px;
-  display: flex;
-  justify-content: space-between;
 }
-body #wrap main #page4 #ourbest .page3_title h2 {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-}
-body #wrap main #page4 #ourbest .best_pro_slider_wrap {
-  position: relative;
+body #wrap main .common_slider {
   width: 1620px;
   margin: 0 auto;
-}
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper-button-prev,
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper-button-next {
-  color: #b11f2c;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper-button-prev {
-  left: -80px;
-}
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper {
-  overflow: hidden;
-}
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide {
-  width: 300px;
-  text-align: left;
   position: relative;
 }
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide .product {
-  transition: transform 0.3s ease;
+body #wrap main .common_slider .swiper {
+  width: 100%;
 }
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide .product:hover {
-  transform: scale(1.03);
+body #wrap main .common_slider .swiper-slide {
+  text-align: center;
 }
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide .product .rank {
+body #wrap main .common_slider .swiper-slide .product .rank {
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 10px;
   background: #1C1B1F;
   color: #fff;
   width: 28px;
@@ -315,24 +262,37 @@ body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .s
   font-weight: 500;
   z-index: 5;
 }
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide .product .price {
-  padding: 10px;
+body #wrap main .common_slider .swiper-slide .product .price {
+  padding: 8px;
 }
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide .product .price .name_like {
-  display: flex;
+body #wrap main .common_slider .swiper-slide .product .price .name_like {
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px;
-}
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide .product .price .name_like .icons {
   display: flex;
-  gap: 5px;
+  margin-bottom: 2px;
 }
-body #wrap main #page4 #ourbest .best_pro_slider_wrap .swiper .swiper-wrapper .swiper-slide .product .price .pro_price {
-  text-align: left;
+body #wrap main .common_slider .swiper-slide .product .price .pro_price p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-align: start;
 }
-body #wrap main #page4 #ourbest .swiper-button-next {
-  right: -80px;
+body #wrap main .common_slider .swiper-button-next,
+body #wrap main .common_slider .swiper-button-prev {
+  width: 35px;
+  height: 35px;
+  background: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body #wrap main .common_slider .swiper-button-next::after,
+body #wrap main .common_slider .swiper-button-prev::after {
+  font-size: 20px;
+  color: #222;
+}
+body #wrap main .common_slider .swiper-button-prev {
+  left: -40px;
+}
+body #wrap main .common_slider .swiper-button-next {
+  right: -40px;
 }
 body #wrap main #page5 .infi_bnr {
   background-color: #1C1B1F;
@@ -349,22 +309,155 @@ body #wrap main #page5 .infi_bnr {
     background-position: -100px 0;
   }
 }
-body #wrap main #page5 .page5_contents {
-  padding: 100px 150px;
+body #wrap main #page5 #lookbook {
+  padding: 150px;
 }
-body #wrap main #page5 .page5_contents .page5_title {
+body #wrap main #page5 #lookbook .page5_title h2 {
+  font-size: 32px;
+}
+body #wrap main #page5 #lookbook .lookbook_slider_wrap {
+  overflow: hidden;
+}
+body #wrap main #page5 #lookbook .lookbook_slider_wrap .swiperlookbook_slider .swiper-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+body #wrap main #page5 #lookbook .lookbook_slider_wrap .swiperlookbook_slider .swiper-wrapper .swiper-slide {
+  flex: 0 0 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+body #wrap main #page5 #lookbook .lookbook_slider_wrap .swiperlookbook_slider .swiper-wrapper .swiper-slide a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+body #wrap main #page6 {
+  text-align: center;
+}
+body #wrap main #page6 em {
+  font-size: 2rem;
+  color: #b11f2c;
+}
+body #wrap main #page6 h2 {
+  margin-bottom: 50px;
+  font-size: 1.375rem;
+}
+body #wrap main #page6 .more {
+  margin-bottom: 10px;
+  text-align: end;
+  padding: 0 150px;
+}
+body #wrap main #page7 {
+  padding: 100px 0;
+}
+body #wrap main #page7 .otherelse {
+  display: flex;
+}
+body #wrap main #page7 .otherelse .brand,
+body #wrap main #page7 .otherelse .about {
+  position: relative;
+  overflow: hidden;
+}
+body #wrap main #page7 .otherelse .brand a,
+body #wrap main #page7 .otherelse .about a {
+  display: block;
+}
+body #wrap main #page7 .otherelse .brand a img,
+body #wrap main #page7 .otherelse .about a img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+body #wrap main #page7 .otherelse .brand a:hover img,
+body #wrap main #page7 .otherelse .about a:hover img {
+  transform: scale(1.05);
+  filter: brightness(80%);
+}
+body #wrap main #page7 .otherelse .brand a:hover::after,
+body #wrap main #page7 .otherelse .about a:hover::after {
+  opacity: 1;
+}
+body #wrap main #storePage {
+  padding: 50px 100px;
+}
+body #wrap main #storePage h2 {
+  margin-bottom: 30px;
+}
+body #wrap main #storePage .store_wrap {
+  justify-content: center;
+  display: flex;
+  gap: 40px;
+}
+body #wrap main #storePage .store_wrap .store_content .store_image_wrap {
+  position: relative;
+}
+body #wrap main #storePage .store_wrap .store_content .store_image_wrap .image-box {
+  width: 1146px;
+  height: 618px;
+  background-image: url("/images/store/Frame 176.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease-in-out;
+}
+body #wrap main #storePage .store_wrap .store_content .store_image_wrap .image-box:hover {
+  background-image: url("/images/store/브랜드 소개.png");
+}
+body #wrap main #storePage .store_wrap .store_content .store_image_wrap .no_result {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+body #wrap main #storePage .store_wrap .store_sidebar {
+  width: 250px;
+}
+body #wrap main #storePage .store_wrap .store_sidebar .store_search {
+  border-radius: 20px;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background-color: #1C1B1F;
+  display: flex;
+  margin-bottom: 20px;
+}
+body #wrap main #storePage .store_wrap .store_sidebar .store_search input {
+  color: #fff;
+  font-size: 12px;
+  background-color: #1C1B1F;
+  padding: 5px 10px;
+}
+body #wrap main #storePage .store_wrap .store_sidebar .store_search button {
+  background-color: #1C1B1F;
+  cursor: pointer;
+}
+body #wrap main #storePage .store_wrap .store_sidebar .store_list {
+  list-style: none;
+  padding: 0;
+}
+body #wrap main #storePage .store_wrap .store_sidebar .store_list .store_item {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-body #wrap main #page5 .page5_contents .lookpics {
-  padding: 30px 150px 100px;
-  gap: 10px;
-  display: flex;
-  justify-content: center;
+body #wrap main #storePage .store_wrap .store_sidebar .store_list .store_item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width 0.3s ease;
 }
-body #wrap main #page5 .page5_contents .lookpics a img {
-  width: 400px;
-  height: 550px;
+body #wrap main #storePage .store_wrap .store_sidebar .store_list .store_item:hover::after {
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -32,45 +32,30 @@ window.addEventListener("scroll", function () {
         noti.classList.remove("hidden");
     }
 });
-// =========================
-// 베스트상품 슬라이더 (순정버전)
-// =========================
-//on.init → 초기화 시 prev 버튼 숨김
+document.querySelectorAll('.common_slider').forEach((sliderWrap) => {
+    const swiperEl = sliderWrap.querySelector('.swiper');
 
-//on.slideChange → 첫 슬라이드면 숨기고, 아니면 보이게
-
-//slider.querySelector() 써서 각 슬라이더별 버튼 구분됨 (버튼 중복 안됨)
-
-const bestSwiper = new Swiper(".best_pro_slider", {
-    slidesPerView: 5,
-    spaceBetween: 20,
-    navigation: {
-        nextEl: ".best_pro_slider_wrap .swiper-button-next",
-        prevEl: ".best_pro_slider_wrap .swiper-button-prev",
-    },
-    on: {
-        init: function () {
-            // 초기화 시 prev 버튼 숨기기
-            if (this.navigation.prevEl) {
-                this.navigation.prevEl.style.display = "none";
-            }
+    new Swiper(swiperEl, {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: sliderWrap.querySelector('.swiper-button-next'),
+            prevEl: sliderWrap.querySelector('.swiper-button-prev'),
         },
-        slideChange: function () {
-            // 첫 슬라이드면 prev 숨기고, 아니면 표시
-            if (this.activeIndex === 0) {
-                this.navigation.prevEl.style.display = "none";
-            } else {
-                this.navigation.prevEl.style.display = "block";
+        on: {
+            init() {
+                const prevBtn = sliderWrap.querySelector(".swiper-button-prev");
+                if (prevBtn) prevBtn.style.display = "none";
+            },
+            slideChange(swiper) {
+                const prevBtn = sliderWrap.querySelector(".swiper-button-prev");
+                if (swiper.activeIndex === 0) {
+                    prevBtn.style.display = "none";
+                } else {
+                    prevBtn.style.display = "block";
+                }
             }
-            if (this.activeIndex >= this.slides.length - this.params.slidesPerView) {
-                this.navigation.nextEl.style.display = "none";
-            } else {
-                this.navigation.nextEl.style.display = "block";
-            }
-        },
-    },
+        }
+    });
 });
-
-
 });
-

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
 body {
     background-color: aqua;
     font-family: 'Noto Sans KR', sans-serif;
@@ -5,8 +6,6 @@ body {
     overflow-x: hidden;
 
     >* {
-        width: 100%;
-        min-width: 1800px;
     }
 
     #wrap {
@@ -38,87 +37,80 @@ body {
                     cursor: pointer;
                 }
             }
-
             //noti
             nav {
-                /* 주의: width 중복 제거(원래 코드에 2번 있어서 하나만 남김) */
                 width: 100%;
                 min-width: 1800px;
                 position: fixed;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
                 background: #fff;
                 padding: 0 80px;
                 border-bottom: 1px solid #ddd;
+                display: grid;
+                grid-template-columns: 145px 1fr 120px;
+                align-items: center;
                 z-index: 1000;
-                .logo img {
-                    width: 145px;
-                    height: 56px;
-                }
+            
+                /* GNB */
                 .gnb {
-                    display: flex;
-                    gap: 90px;
+                    display: grid;
+                    grid-template-columns: repeat(9, 1fr);
+                    text-align: center;
                     list-style: none;
-                    li a {
-                        display: inline-block;
-                        padding: 20px 0;
-                        font-weight: 500;
-                        font-size: 1rem;
-                        color: #222;
-                        text-decoration: none;
-                        &:hover {
-                            color: #b11f2c;
-                        }
-                    }//gnb > li
-                }//gnb
-                .my_box {
-                    display: flex;
-                    gap: 15px;
-
-                    img {
-                        width: 24px;
-                        height: 24px;
-                    }
-                }//my_box
-                /* --- 전체 서브메뉴 --- */
-                .sub_wrap {
-                    justify-content: center;
-                    position: absolute;
-                    left: 0;
-                    top: 100%;
-                    width: 100%;
-                    background: rgba(255, 255, 255, 0.8);
-                    border-top: 1px solid #ddd;
-                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-                    padding: 25px 0px;
-                    display: none;
-                    z-index: 10;
-                    .sub_width {
-                        display: flex;
-                        width: 1148px;
-                        height: auto;
-                        .sub {
-                            list-style: none;
-                            li a {
-                                display: block;
-                                padding: 5px 0;
-                                font-size: 0.9rem;
-                                color: #333;
-                                text-decoration: none;
-                                transition: 0.2s;
-                                &:hover {
-                                    color: #b11f2c;
-                                }
-                            }//li a
-                        }//sub
-                    } //sub_width
-                }//sub_wrap
-                /* GNB hover 시 서브메뉴 전체 오픈 */
-                .gnb:hover~.sub_wrap {
-                    display: flex;
                 }
-            }//nav
+            
+                /* 서브메뉴 */
+                .sub_wrap {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    padding: 25px 80px;
+            
+                    background: rgba(255,255,255,0.9);
+                    border-top: 1px solid #ddd;
+                    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            
+                    display: none;
+            
+                    /* gnb와 완전 동일한 9정렬 */
+                    grid-template-columns: repeat(9, 1fr);
+            
+                    /* 로고+패딩 만큼 왼쪽에 보정 */
+                    padding-left: calc(145px + 80px);
+                    padding-right: 120px;
+                }
+            
+                /* 각 sub 위치 */
+                .sub {
+                    font-size: 14px;
+                    width: 100px;
+                    text-align: left;     // 기본 block이니까 문제없음
+                    padding-left: 10px;   // 간격만 살짝 줌
+                }
+                .sub_women    { grid-column: 1; }
+                .sub_kids     { grid-column: 2; }
+                .sub_bags     { grid-column: 3; }
+                .sub_sportyon { grid-column: 4; }
+                .sub_outlet   { grid-column: 5; }
+                .sub_living   { grid-column: 6; }
+                .sub_store    { grid-column: 7; }
+                .sub_webonly  { grid-column: 8; }
+                .sub_story    { grid-column: 9; }
+            
+                .sub li a {
+                    padding: 5px 0;
+                    display: block;
+                    color: #333;
+                    &:hover { color: #b11f2c; }
+                }
+            
+                .gnb:hover ~ .sub_wrap {
+                    display: grid;
+                }
+            }
+            
+            
+            
         }//header
         /* 메인시작 */
         main {
@@ -166,6 +158,7 @@ body {
                     z-index: 5;
                     .bundle_1 {
                         display: flex;
+                        a {}
                         .page2_1_txt {
                             display: flex;
                             flex-direction: column;
@@ -173,44 +166,27 @@ body {
                             width: 380px;
                             padding: 30px 40px;
                             background-color: rgba(227, 104, 136, 0.95);
-                            .newstyle {
+                            .newstyle_en {
+                                font-size: 1.875rem;
+                                font-family: "Old Zen Mincho", serif;
+                                line-height: 160%;
                                 color: #fff;
-                                text-align: left;
                             }
-                            .p2-1bot {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                .newstyle_en {
-                                    color: #fff;
-                                }
-                                a img {
-                                    /* 오른쪽 */
-                                }
-                            }// .p2-1bot
                         }//page2_1_txt
                         .page2_2_txt {
+                            font-size: 1.5rem;
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
                             width: 380px;
                             padding: 30px 40px;
                             background-color: rgba(248, 191, 215, 0.95);
-                            .fallstyle {
+                            .fallstyle_en {
+                                font-size: 1.875rem;
+                                font-family: "Old Zen Mincho", serif;
+                                line-height: 160%;
                                 color: #1C1B1F;
-                                text-align: left;
                             }
-                            .p2-2bot {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                .fallstyle_en {
-                                    color: #1C1B1F;
-                                }
-                                a img {
-                                    /* 오른쪽 */
-                                }
-                            }// .p2-2bot
                         }// .page2_2_txt
                     }//bundle_1
                     .bundle_2 {
@@ -222,21 +198,12 @@ body {
                             width: 380px;
                             padding: 30px 40px;
                             background-color: rgba(180, 181, 52, 0.95);
-                            .salestyle {
+                            .salestyle_en {
+                                font-size: 1.875rem;
+                                line-height: 160%;
+                                font-family: "Old Zen Mincho", serif;
                                 color: #1C1B1F;
-                                text-align: left;
                             }
-                            .p2-3bot {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                .salestyle_en {
-                                    color: #1C1B1F;
-                                }
-                                a img {
-                                    /* 오른쪽 */
-                                }
-                            }// .p2-3bot
                         }// .page2_3_txt
                         .page2_4_txt {
                             display: flex;
@@ -245,22 +212,12 @@ body {
                             width: 380px;
                             padding: 30px 40px;
                             background-color: rgba(245, 140, 33, 0.95);
-                            .kidsstyle {
+                            .kidsstyle_en {
+                                font-size: 1.875rem;
+                                line-height: 160%;
+                                font-family: "Old Zen Mincho", serif;
                                 color: #fff;
-                                text-align: left;
                             }
-                            .p2-4bot {
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                .kidsstyle_en {
-                                    color: #fff;
-                                }
-                                a img {
-                                    /* 오른쪽 */
-                                }
-                            }
-                            // .p2-4bot
                         }
                         // .page2_4_txt
                     }
@@ -270,86 +227,84 @@ body {
             }
             //page2
             #page4 {
-                background-color: aquamarine;
-                padding: 50px 0;
-                #ourbest {
-                    .page3_title {
-                        padding: 0 150px;
-                        display: flex;
-                        justify-content: space-between;
-                        h2 {
-                            font-size: 1.8rem;
-                            margin-bottom: 30px;
-                        }
-                        p {}
-                    }//.page3_title 
-                    .best_pro_slider_wrap {
-                        position: relative;
-                        width: 1620px;
-                        margin: 0 auto;
-                        .swiper-button-prev,
-                        .swiper-button-next {
-                            color: #b11f2c;
+                margin:100px 0;
+                text-align: center;
+                h2 {
+                    margin-bottom: 70px;
+                    font-size: 2rem;
+                }
+                .more {
+                    font-size: 0.875rem;
+                    margin-bottom: 10px;
+                    text-align: end;
+                    padding: 0 150px;
+                }
+            }
+            .common_slider {
+                width: 1620px;
+                margin: 0 auto;
+                position: relative;
+                .swiper {
+                    width: 100%;
+                }
+                .swiper-slide {
+                    text-align: center;
+                    .product {
+                        .rank {
                             position: absolute;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            z-index: 10;
-                        }
-                        .swiper-button-prev {
-                            left: -80px;
-                        }
-                        .swiper {
-                            overflow: hidden;
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    width: 300px;
-                                    text-align: left;
-                                    position: relative;
-                                    .product {
-                                        transition: transform 0.3s ease;
-                                        &:hover {
-                                            transform: scale(1.03);
-                                        }
-                                        .rank {
-                                            position: absolute;
-                                            top: 5px;
-                                            left: 5px;
-                                            background: #1C1B1F;
-                                            color: #fff;
-                                            width: 28px;
-                                            height: 28px;
-                                            display: flex;
-                                            justify-content: center;
-                                            align-items: center;
-                                            font-weight: 500;
-                                            z-index: 5;
-                                        }//rank
-                                        .price {
-                                            padding: 10px;
-                                            .name_like {
-                                                display: flex;
-                                                justify-content: space-between;
-                                                align-items: center;
-                                                margin-bottom: 5px;
-                                                .icons {
-                                                    display: flex;
-                                                    gap: 5px;
-                                                }
-                                            }
-                                            .pro_price {
-                                                text-align: left;
-                                            }//pro_price
-                                        }//price
-                                    }//product
-                                }//swiper_slide
-                            }//swiper-wrapper
-                        }//swiper
-                    }//best_pro_slider_wrap
-                    .swiper-button-next {
-                        right: -80px;
+                            top: 5px;
+                            left: 10px;
+                            background: #1C1B1F;
+                            color: #fff;
+                            width: 28px;
+                            height: 28px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: 500;
+                            z-index: 5;
+                        }//rank
+                        .price {
+                            padding: 8px;
+                            .name_like {
+                                justify-content: space-between;
+                                display: flex;
+                                margin-bottom: 2px;
+                                p {
+                                    
+                                }
+                                .icons {
+                                }
+                            }
+                            .pro_price {
+                                p { font-size: 1.125rem;
+                                    font-weight: 500;
+                                    text-align: start;}
+                            }//pro_price
+                        }//price
                     }
-                } //ourbest
-            }//page4
+                }
+                .swiper-button-next,
+                .swiper-button-prev {
+                    width: 35px;
+                    height: 35px;
+                    background: none;
+                    top: 50%;
+                    transform: translateY(-50%);
+            
+                    &::after {
+                        font-size: 20px;
+                        color: #222;
+                    }
+                }
+                .swiper-button-prev {
+                    left: -40px;   // ← 1620 바깥으로
+                }
+            
+                .swiper-button-next {
+                    right: -40px;  // → 1620 바깥으로
+                }
+            }
             #page5 {
                 .infi_bnr {
                     background-color: #1C1B1F;
@@ -366,28 +321,180 @@ body {
                         background-position: -100px 0; // ← 단위 꼭 필요!
                     }
                 }//infi_bnr
-                .page5_contents {
-                    padding: 100px 150px;
+                #lookbook {
+                    padding: 150px  ;
                     .page5_title {
-                        display: flex;
-                        justify-content: space-between;
-                        .lookbook {}
-                        .span {
-                            a {}
+                        h2 {
+                            font-size: 32px;
+                            a {
+                                p {}
+                            }
                         }
-                    }//#page5_title
-                    .lookpics {
-                        padding: 30px 150px 100px;
-                        gap: 10px;
-                        display: flex;
-                        justify-content: center;
-                        a img {
-                            width: 400px;
-                            height: 550px;
-                        }
-                    } //lookpics
-                }//page5_contents
+                    }
+                    .lookbook_slider_wrap {
+                        overflow: hidden;
+                        .swiperlookbook_slider{
+                            .swiper-wrapper {
+                                display: flex; // 슬라이드가 가로로 나열되도록
+                                justify-content: flex-start;
+                                .swiper-slide {
+                                    flex: 0 0 25%; // 한 화면에 4개
+                                    padding: 10px; // 슬라이드 간 간격
+                                    box-sizing: border-box;
+                                    a img {
+                                        width: 100%;
+                                        height: auto;
+                                        display: block;
+                                        border-radius: 8px; // 둥글게 하고 싶으면
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+                        }//swiperlookbook_slider
+                    }//lookbook_slider_wrap
+                }//lookbook
             }//#page5
+            #page6 {
+                text-align: center;
+                em {
+                    
+                    font-size: 2rem;
+                    color: #b11f2c;
+                }
+                h2 {
+                    margin-bottom: 50px;
+                    font-size: 1.375rem;
+                }
+                .more {
+                    margin-bottom: 10px;
+                    text-align: end;
+                    padding: 0 150px;
+                }
+            }
+            #page7 {
+                padding: 100px 0;
+                .otherelse {
+                    display: flex;
+                    .brand,
+                    .about {
+                        position: relative; // 그라데이션 overlay 위해 필요
+                        overflow: hidden; // scale할 때 이미지 넘어가는 부분 숨김
+                        a {
+                            display: block;
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: auto;
+                                transition: transform 0.3s ease, filter 0.3s ease;
+                            }
+                            // hover 시 scale + 어둡게
+                            &:hover img {
+                                transform: scale(1.05); // 살짝 커짐
+                                filter: brightness(80%);
+                            }
+                            &:hover::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            #storePage {
+                padding: 50px 100px;
+                h2 {
+                    
+                    margin-bottom: 30px;
+                }
+                .store_wrap {
+                    justify-content: center;
+                    display: flex;
+                    gap: 40px;
+                    // 사이드바
+                    .store_content {
+                        .store_image_wrap {
+                            position: relative;
+                            .image-box {
+                                width: 1146px;
+                                height: 618px;
+                                background-image: url('/images/store/Frame\ 176.png');
+                                background-size: cover;
+                                background-position: center;
+                                transition: 0.3s ease-in-out;
+                                &:hover {
+                                background-image: url('/images/store/브랜드\ 소개.png');
+                                }
+                            }
+                            .no_result {
+                                display: none;
+                                padding: 20px;
+                                text-align: center;
+                                font-size: 1.2rem;
+                                color: #333;
+                            }
+                        }
+                    }
+                    .store_sidebar {
+
+                        width: 250px;
+                        .store_search {
+                            border-radius: 20px;
+                            justify-content: space-between;
+                            padding: 5px 10px;
+                            background-color: #1C1B1F;
+                            display: flex;
+                            margin-bottom: 20px;
+                            input {
+                                color: #fff;
+                                font-size: 12px;
+                                background-color: #1C1B1F;
+                                padding: 5px 10px;
+                            }
+                            button {
+
+                                background-color: #1C1B1F;
+                                cursor: pointer;
+                            }
+                        }
+                        .store_list {
+                            list-style: none;
+                            padding: 0;
+                        
+                            .store_item {
+                                position: relative; // ::after 절대위치 기준
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 10px;
+                                cursor: pointer;
+                        
+                                // 필요하면 hover 때 살짝 키우기
+                                transition: transform 0.3s ease;
+                        
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;          // 오른쪽에서 시작
+                                    width: 0;          // 처음에는 안 보이게
+                                    height: 2px;
+                                    background: black;
+                                    transition: width 0.3s ease;
+                                }
+                        
+                                &:hover {
+                                    // 선택사항
+                                    // transform: scale(1.02);
+                        
+                                    &::after {
+                                        width: 100%;   // 오른쪽 → 왼쪽으로 쭉
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    // 이미지 & 정보 
+                }
+            }//store_page
         }//main
     }//wrap
 }//body
