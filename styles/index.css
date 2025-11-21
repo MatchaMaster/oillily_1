@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap");
 body {
-  background-color: aqua;
   font-family: "Noto Sans KR", sans-serif;
   color: #1C1B1F;
   overflow-x: hidden;
@@ -150,85 +149,66 @@ body #wrap main #main_visual .swiper1 .slideBtn .slidedot.active {
   transform: scale(1.3);
 }
 body #wrap main #page2 {
+  background-image: url(/images/main_images/page2main.png);
+  background-size: cover;
+  background-position: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body #wrap main #page2 .frame {
+  display: flex;
+}
+body #wrap main #page2 a {
+  display: block;
   position: relative;
-  background: url("/images/main_images/page2main.png") no-repeat center/cover;
+  flex: 1;
+  overflow: hidden;
+}
+body #wrap main #page2 {
+  /* 공통 이미지 스타일 */
+}
+body #wrap main #page2 .hoverbox img {
+  width: 100%;
+  display: block;
   height: auto;
 }
-body #wrap main #page2 .page2_contents {
+body #wrap main #page2 {
+  /* 기본 이미지 - 절대 사라지면 안 됨 */
+}
+body #wrap main #page2 .img-default {
+  opacity: 1;
+  visibility: visible;
   position: relative;
-  z-index: 5;
+  z-index: 1;
+  transition: transform 0.4s ease;
 }
-body #wrap main #page2 .page2_contents .bundle_1 {
-  display: flex;
+body #wrap main #page2 {
+  /* hover 이미지 - 맨 위에서만 페이드 인 */
 }
-body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 380px;
-  padding: 30px 40px;
-  background-color: rgba(227, 104, 136, 0.95);
+body #wrap main #page2 .img-hover {
+  opacity: 0;
+  visibility: visible; /* 중요! hidden 쓰면 페이드 타이밍 틈 생김 */
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-body #wrap main #page2 .page2_contents .bundle_1 .page2_1_txt .newstyle_en {
-  font-size: 1.875rem;
-  font-family: "Old Zen Mincho", serif;
-  line-height: 160%;
-  color: #fff;
+body #wrap main #page2 {
+  /* hover 시 */
 }
-body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt {
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 380px;
-  padding: 30px 40px;
-  background-color: rgba(248, 191, 215, 0.95);
+body #wrap main #page2 .hoverbox:hover .img-hover {
+  opacity: 1;
 }
-body #wrap main #page2 .page2_contents .bundle_1 .page2_2_txt .fallstyle_en {
-  font-size: 1.875rem;
-  font-family: "Old Zen Mincho", serif;
-  line-height: 160%;
-  color: #1C1B1F;
-}
-body #wrap main #page2 .page2_contents .bundle_2 {
-  display: flex;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 380px;
-  padding: 30px 40px;
-  background-color: rgba(180, 181, 52, 0.95);
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_3_txt .salestyle_en {
-  font-size: 1.875rem;
-  line-height: 160%;
-  font-family: "Old Zen Mincho", serif;
-  color: #1C1B1F;
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 380px;
-  padding: 30px 40px;
-  background-color: rgba(245, 140, 33, 0.95);
-}
-body #wrap main #page2 .page2_contents .bundle_2 .page2_4_txt .kidsstyle_en {
-  font-size: 1.875rem;
-  line-height: 160%;
-  font-family: "Old Zen Mincho", serif;
-  color: #fff;
+body #wrap main #page2 {
+  /* 기본 이미지는 opacity 0 으로 만들면 안 됨 → 배경이 비침 */
 }
 body #wrap main #page4 {
   margin: 100px 0;
   text-align: center;
 }
 body #wrap main #page4 h2 {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   font-size: 2rem;
 }
 body #wrap main #page4 .more {
@@ -236,6 +216,60 @@ body #wrap main #page4 .more {
   margin-bottom: 10px;
   text-align: end;
   padding: 0 150px;
+}
+body #wrap main #page4 .category_tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+body #wrap main #page4 .category_tabs li {
+  position: relative;
+}
+body #wrap main #page4 .category_tabs li button {
+  border: none;
+  background: none;
+  padding: 5px 0;
+  cursor: pointer;
+  font-size: 1.125rem;
+  color: #666;
+  transition: all 0.25s ease;
+}
+body #wrap main #page4 .category_tabs li {
+  /* 활성화 상태 */
+}
+body #wrap main #page4 .category_tabs li.active button {
+  color: #b6142b;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+body #wrap main #page4 .category_tabs li {
+  /* 밑줄 */
+}
+body #wrap main #page4 .category_tabs li.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #b6142b;
+  transform: scaleX(1);
+  transition: 0.25s ease;
+}
+body #wrap main #page4 .category_tabs li {
+  /* 기본(비활성)일 때 밑줄 없음 */
+}
+body #wrap main #page4 .category_tabs li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #b6142b;
+  transform: scaleX(0);
+  transition: 0.25s ease;
 }
 body #wrap main .common_slider {
   width: 1620px;
@@ -310,7 +344,7 @@ body #wrap main #page5 .infi_bnr {
   }
 }
 body #wrap main #page5 #lookbook {
-  padding: 150px;
+  padding: 50px 150px;
 }
 body #wrap main #page5 #lookbook .page5_title h2 {
   font-size: 32px;
@@ -334,7 +368,23 @@ body #wrap main #page5 #lookbook .lookbook_slider_wrap .swiperlookbook_slider .s
   border-radius: 8px;
   object-fit: cover;
 }
+body #wrap main #page5 .infi_bnr_y {
+  background-color: #1C1B1F;
+  height: 27px;
+  background-image: url(/images/icons/txt_infi.png);
+  background-repeat: repeat-x;
+  animation: infiniteScroll_RL 5s linear infinite;
+}
+@keyframes infiniteScroll_RL {
+  from {
+    background-position: -100px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
 body #wrap main #page6 {
+  margin-top: 100px;
   text-align: center;
 }
 body #wrap main #page6 em {
@@ -385,7 +435,9 @@ body #wrap main #storePage {
   padding: 50px 100px;
 }
 body #wrap main #storePage h2 {
-  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
 }
 body #wrap main #storePage .store_wrap {
   justify-content: center;
@@ -425,10 +477,12 @@ body #wrap main #storePage .store_wrap .store_sidebar .store_search {
   margin-bottom: 20px;
 }
 body #wrap main #storePage .store_wrap .store_sidebar .store_search input {
-  color: #fff;
-  font-size: 12px;
+  font-size: 0.875rem;
   background-color: #1C1B1F;
   padding: 5px 10px;
+}
+body #wrap main #storePage .store_wrap .store_sidebar .store_search input::placeholder {
+  color: #fff;
 }
 body #wrap main #storePage .store_wrap .store_sidebar .store_search button {
   background-color: #1C1B1F;
@@ -442,8 +496,9 @@ body #wrap main #storePage .store_wrap .store_sidebar .store_list .store_item {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px 10px;
   cursor: pointer;
+  font-size: 1.125rem;
   transition: transform 0.3s ease;
 }
 body #wrap main #storePage .store_wrap .store_sidebar .store_list .store_item::after {
@@ -458,6 +513,63 @@ body #wrap main #storePage .store_wrap .store_sidebar .store_list .store_item::a
 }
 body #wrap main #storePage .store_wrap .store_sidebar .store_list .store_item:hover::after {
   width: 100%;
+}
+body #wrap #footer {
+  width: 100%;
+  background-color: #1c1b1f;
+  padding: 50px 100px;
+  color: #ddd;
+  font-size: 0.875rem;
+}
+body #wrap #footer .footer_inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr 1fr 100px;
+  gap: 40px;
+  align-items: flex-start;
+}
+body #wrap #footer .footer_logo img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+body #wrap #footer .footer_col h3 {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+body #wrap #footer .footer_col p {
+  margin-bottom: 6px;
+  line-height: 1.4;
+  color: #ccc;
+}
+body #wrap #footer .footer_col .service_list {
+  list-style: none;
+  padding: 0;
+}
+body #wrap #footer .footer_col .service_list li {
+  margin-bottom: 8px;
+}
+body #wrap #footer .footer_col .service_list li a {
+  color: #ccc;
+  transition: 0.2s;
+}
+body #wrap #footer .footer_col .service_list li a:hover {
+  color: #fff;
+}
+body #wrap #footer .footer_sns {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+body #wrap #footer .footer_sns a img {
+  width: 28px;
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+body #wrap #footer .footer_sns a img:hover {
+  opacity: 0.6;
 }
 
 /*# sourceMappingURL=index.css.map */

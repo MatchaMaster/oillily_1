@@ -58,4 +58,16 @@ document.querySelectorAll('.common_slider').forEach((sliderWrap) => {
         }
     });
 });
+
 });
+
+new Swiper(".swiperlookbook_slider", {
+    slidesPerView: 4,        // 한 화면에 보이는 슬라이드 개수
+    spaceBetween: 20,        // 슬라이드 간 간격
+    grabCursor: true,        // 마우스로 잡아당기는 커서
+    centeredSlides: false,   // 가운데 정렬 X
+    freeMode: true,          // 자유롭게 드래그 가능
+    loop: false,             // 반복 X (원하면 true)
+});
+
+

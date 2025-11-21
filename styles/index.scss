@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
+
 body {
-    background-color: aqua;
     font-family: 'Noto Sans KR', sans-serif;
     color: #1C1B1F;
     overflow-x: hidden;
 
-    >* {
-    }
+    >* {}
 
     #wrap {
         header {
@@ -36,8 +35,7 @@ body {
                     margin-left: 10px;
                     cursor: pointer;
                 }
-            }
-            //noti
+            }//noti
             nav {
                 width: 100%;
                 min-width: 1800px;
@@ -49,7 +47,7 @@ body {
                 grid-template-columns: 145px 1fr 120px;
                 align-items: center;
                 z-index: 1000;
-            
+
                 /* GNB */
                 .gnb {
                     display: grid;
@@ -57,7 +55,7 @@ body {
                     text-align: center;
                     list-style: none;
                 }
-            
+
                 /* 서브메뉴 */
                 .sub_wrap {
                     position: absolute;
@@ -65,63 +63,92 @@ body {
                     left: 0;
                     width: 100%;
                     padding: 25px 80px;
-            
-                    background: rgba(255,255,255,0.9);
+
+                    background: rgba(255, 255, 255, 0.9);
                     border-top: 1px solid #ddd;
-                    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-            
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+
                     display: none;
-            
+
                     /* gnb와 완전 동일한 9정렬 */
                     grid-template-columns: repeat(9, 1fr);
-            
+
                     /* 로고+패딩 만큼 왼쪽에 보정 */
                     padding-left: calc(145px + 80px);
                     padding-right: 120px;
                 }
-            
+
                 /* 각 sub 위치 */
                 .sub {
                     font-size: 14px;
                     width: 100px;
-                    text-align: left;     // 기본 block이니까 문제없음
-                    padding-left: 10px;   // 간격만 살짝 줌
+                    text-align: left; // 기본 block이니까 문제없음
+                    padding-left: 10px; // 간격만 살짝 줌
                 }
-                .sub_women    { grid-column: 1; }
-                .sub_kids     { grid-column: 2; }
-                .sub_bags     { grid-column: 3; }
-                .sub_sportyon { grid-column: 4; }
-                .sub_outlet   { grid-column: 5; }
-                .sub_living   { grid-column: 6; }
-                .sub_store    { grid-column: 7; }
-                .sub_webonly  { grid-column: 8; }
-                .sub_story    { grid-column: 9; }
-            
+
+                .sub_women {
+                    grid-column: 1;
+                }
+
+                .sub_kids {
+                    grid-column: 2;
+                }
+
+                .sub_bags {
+                    grid-column: 3;
+                }
+
+                .sub_sportyon {
+                    grid-column: 4;
+                }
+
+                .sub_outlet {
+                    grid-column: 5;
+                }
+
+                .sub_living {
+                    grid-column: 6;
+                }
+
+                .sub_store {
+                    grid-column: 7;
+                }
+
+                .sub_webonly {
+                    grid-column: 8;
+                }
+
+                .sub_story {
+                    grid-column: 9;
+                }
+
                 .sub li a {
                     padding: 5px 0;
                     display: block;
                     color: #333;
-                    &:hover { color: #b11f2c; }
+
+                    &:hover {
+                        color: #b11f2c;
+                    }
                 }
-            
-                .gnb:hover ~ .sub_wrap {
+
+                .gnb:hover~.sub_wrap {
                     display: grid;
                 }
             }
-            
-            
-            
         }//header
         /* 메인시작 */
         main {
             #main_visual {
                 overflow: hidden;
                 position: relative;
+
                 .swiper1 {
                     img {
                         display: block;
                         height: 98vh;
                     }
+
                     .slideBtn {
                         justify-content: center;
                         position: absolute;
@@ -131,6 +158,7 @@ body {
                         display: flex;
                         gap: 10px;
                         z-index: 20;
+
                         .slidedot {
                             width: 10px;
                             height: 10px;
@@ -139,116 +167,152 @@ body {
                             border: none;
                             cursor: pointer;
                             transition: all 0.3s ease;
+
                             &.active {
                                 background-color: #b11f2c;
                                 transform: scale(1.3);
                             }
-                        }//slidedot
-                    }//slideBtn
-                }//swiper1
+                        }
+
+                        //slidedot
+                    }
+
+                    //slideBtn
+                }
+
+                //swiper1
             }//#main_visual
             #page2 {
+                background-image: url(/images/main_images/page2main.png);
+                background-size: cover;
+                background-position: center;
                 display: flex;
-                justify-content: center;
-                position: relative;
-                background: url('/images/main_images/page2main.png') no-repeat center/cover;
-                height: auto;
-                .page2_contents {
-                    position: relative;
-                    z-index: 5;
-                    .bundle_1 {
-                        display: flex;
-                        a {}
-                        .page2_1_txt {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            width: 380px;
-                            padding: 30px 40px;
-                            background-color: rgba(227, 104, 136, 0.95);
-                            .newstyle_en {
-                                font-size: 1.875rem;
-                                font-family: "Old Zen Mincho", serif;
-                                line-height: 160%;
-                                color: #fff;
-                            }
-                        }//page2_1_txt
-                        .page2_2_txt {
-                            font-size: 1.5rem;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            width: 380px;
-                            padding: 30px 40px;
-                            background-color: rgba(248, 191, 215, 0.95);
-                            .fallstyle_en {
-                                font-size: 1.875rem;
-                                font-family: "Old Zen Mincho", serif;
-                                line-height: 160%;
-                                color: #1C1B1F;
-                            }
-                        }// .page2_2_txt
-                    }//bundle_1
-                    .bundle_2 {
-                        display: flex;
-                        .page2_3_txt {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            width: 380px;
-                            padding: 30px 40px;
-                            background-color: rgba(180, 181, 52, 0.95);
-                            .salestyle_en {
-                                font-size: 1.875rem;
-                                line-height: 160%;
-                                font-family: "Old Zen Mincho", serif;
-                                color: #1C1B1F;
-                            }
-                        }// .page2_3_txt
-                        .page2_4_txt {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            width: 380px;
-                            padding: 30px 40px;
-                            background-color: rgba(245, 140, 33, 0.95);
-                            .kidsstyle_en {
-                                font-size: 1.875rem;
-                                line-height: 160%;
-                                font-family: "Old Zen Mincho", serif;
-                                color: #fff;
-                            }
-                        }
-                        // .page2_4_txt
-                    }
-                    // .bundle_2
+                flex-direction: column;
+                align-items: center;
+            
+                .frame {
+                    display: flex;
                 }
-                //page2_contents
-            }
-            //page2
+            
+                a {
+                    display: block;
+                    position: relative;
+                    flex: 1;
+                    overflow: hidden;
+                }
+            
+                /* 공통 이미지 스타일 */
+                .hoverbox img {
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                }
+            
+                /* 기본 이미지 - 절대 사라지면 안 됨 */
+                .img-default {
+                    opacity: 1;
+                    visibility: visible;
+                    position: relative;
+                    z-index: 1;
+                    transition: transform .4s ease;
+                }
+            
+                /* hover 이미지 - 맨 위에서만 페이드 인 */
+                .img-hover {
+                    opacity: 0;
+                    visibility: visible;  /* 중요! hidden 쓰면 페이드 타이밍 틈 생김 */
+                    position: absolute;
+                    inset: 0;
+                    z-index: 2;
+                    transition: opacity .4s ease, transform .4s ease;
+                }
+            
+                /* hover 시 */
+                .hoverbox:hover .img-hover {
+                    opacity: 1;
+
+                }
+            
+                /* 기본 이미지는 opacity 0 으로 만들면 안 됨 → 배경이 비침 */
+                .hoverbox:hover .img-default {
+
+                }
+            }//page2           
             #page4 {
-                margin:100px 0;
+                margin: 100px 0;
                 text-align: center;
+
                 h2 {
-                    margin-bottom: 70px;
+                    margin-bottom: 50px;
                     font-size: 2rem;
                 }
+
                 .more {
                     font-size: 0.875rem;
                     margin-bottom: 10px;
                     text-align: end;
                     padding: 0 150px;
                 }
-            }
+                .category_tabs {
+                    display: flex;
+                    justify-content: center;
+                    gap: 24px;
+                    margin-bottom: 40px;
+                    li {
+                        position: relative;
+                        button {
+                            border: none;
+                            background: none;
+                            padding: 5px 0;
+                            cursor: pointer;
+                            font-size: 1.125rem;
+                            color: #666;
+                            transition: all .25s ease;
+                        }
+                        /* 활성화 상태 */
+                        &.active button {
+                            color: #b6142b;         // 빨간 포인트 컬러 (원하는 색으로 변경 가능)
+                            font-size: 1.25rem;     // 살짝 커짐
+                            font-weight: 600;
+                        }
+                        /* 밑줄 */
+                        &.active::after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: -3px;
+                            height: 2px;
+                            background-color: #b6142b;
+                            transform: scaleX(1);
+                            transition: .25s ease;
+                        }
+                        /* 기본(비활성)일 때 밑줄 없음 */
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 0; right: 0;
+                            bottom: -3px;
+                            height: 2px;
+                            background-color: #b6142b;
+                            transform: scaleX(0);
+                            transition: .25s ease;
+                        }
+                    }
+                }
+            }//page4
             .common_slider {
                 width: 1620px;
                 margin: 0 auto;
                 position: relative;
+
                 .swiper {
                     width: 100%;
                 }
+
                 .swiper-slide {
                     text-align: center;
+
                     .product {
                         .rank {
                             position: absolute;
@@ -263,27 +327,37 @@ body {
                             align-items: center;
                             font-weight: 500;
                             z-index: 5;
-                        }//rank
+                        }
+
+                        //rank
                         .price {
                             padding: 8px;
+
                             .name_like {
                                 justify-content: space-between;
                                 display: flex;
                                 margin-bottom: 2px;
+
+                                p {}
+
+                                .icons {}
+                            }
+
+                            .pro_price {
                                 p {
-                                    
-                                }
-                                .icons {
+                                    font-size: 1.125rem;
+                                    font-weight: 500;
+                                    text-align: start;
                                 }
                             }
-                            .pro_price {
-                                p { font-size: 1.125rem;
-                                    font-weight: 500;
-                                    text-align: start;}
-                            }//pro_price
-                        }//price
+
+                            //pro_price
+                        }
+
+                        //price
                     }
                 }
+
                 .swiper-button-next,
                 .swiper-button-prev {
                     width: 35px;
@@ -291,18 +365,19 @@ body {
                     background: none;
                     top: 50%;
                     transform: translateY(-50%);
-            
+
                     &::after {
                         font-size: 20px;
                         color: #222;
                     }
                 }
+
                 .swiper-button-prev {
-                    left: -40px;   // ← 1620 바깥으로
+                    left: -40px; // ← 1620 바깥으로
                 }
-            
+
                 .swiper-button-next {
-                    right: -40px;  // → 1620 바깥으로
+                    right: -40px; // → 1620 바깥으로
                 }
             }
             #page5 {
@@ -313,34 +388,44 @@ body {
                     background-repeat: repeat-x; // 중요!! 반복되어야 자연스럽게 흘러감
                     animation: infiniteScroll 5s linear infinite; // 이름도 바꾸고 반복 추가
                 }
+
                 @keyframes infiniteScroll {
                     from {
                         background-position: 0 0;
                     }
+
                     to {
                         background-position: -100px 0; // ← 단위 꼭 필요!
                     }
-                }//infi_bnr
+                }
+
+                //infi_bnr
                 #lookbook {
-                    padding: 150px  ;
+                    padding: 50px 150px;
+
                     .page5_title {
                         h2 {
                             font-size: 32px;
+
                             a {
                                 p {}
                             }
                         }
                     }
+
                     .lookbook_slider_wrap {
                         overflow: hidden;
-                        .swiperlookbook_slider{
+
+                        .swiperlookbook_slider {
                             .swiper-wrapper {
                                 display: flex; // 슬라이드가 가로로 나열되도록
                                 justify-content: flex-start;
+
                                 .swiper-slide {
                                     flex: 0 0 25%; // 한 화면에 4개
                                     padding: 10px; // 슬라이드 간 간격
                                     box-sizing: border-box;
+
                                     a img {
                                         width: 100%;
                                         height: auto;
@@ -350,69 +435,101 @@ body {
                                     }
                                 }
                             }
-                        }//swiperlookbook_slider
-                    }//lookbook_slider_wrap
-                }//lookbook
+                        }
+
+                        //swiperlookbook_slider
+                    }
+
+                    //lookbook_slider_wrap
+                }
+                .infi_bnr_y {
+                    background-color: #1C1B1F;
+                    height: 27px;
+                    background-image: url(/images/icons/txt_infi.png);
+                    background-repeat: repeat-x; // 중요!! 반복되어야 자연스럽게 흘러감
+                    animation: infiniteScroll_RL 5s linear infinite; // 이름도 바꾸고 반복 추가
+                }
+                @keyframes infiniteScroll_RL {
+                    from { background-position: -100px 0; }
+                    to { background-position: 0 0; }
+                }
+
+                //lookbook
             }//#page5
             #page6 {
+                margin-top: 100px;
                 text-align: center;
+
                 em {
-                    
+
                     font-size: 2rem;
                     color: #b11f2c;
                 }
+
                 h2 {
                     margin-bottom: 50px;
                     font-size: 1.375rem;
                 }
+
                 .more {
                     margin-bottom: 10px;
                     text-align: end;
                     padding: 0 150px;
                 }
-            }
+            }//page6
             #page7 {
                 padding: 100px 0;
+
                 .otherelse {
                     display: flex;
+
                     .brand,
                     .about {
                         position: relative; // 그라데이션 overlay 위해 필요
                         overflow: hidden; // scale할 때 이미지 넘어가는 부분 숨김
+
                         a {
                             display: block;
+
                             img {
                                 display: block;
                                 width: 100%;
                                 height: auto;
                                 transition: transform 0.3s ease, filter 0.3s ease;
                             }
+
                             // hover 시 scale + 어둡게
                             &:hover img {
                                 transform: scale(1.05); // 살짝 커짐
                                 filter: brightness(80%);
                             }
+
                             &:hover::after {
                                 opacity: 1;
                             }
                         }
                     }
                 }
-            }
+            }//page7
             #storePage {
                 padding: 50px 100px;
+
                 h2 {
-                    
-                    margin-bottom: 30px;
+                    font-size: 2rem;
+                    text-align: center;
+                    margin-bottom: 50px;
                 }
+
                 .store_wrap {
                     justify-content: center;
                     display: flex;
                     gap: 40px;
+
                     // 사이드바
                     .store_content {
                         .store_image_wrap {
                             position: relative;
+
                             .image-box {
                                 width: 1146px;
                                 height: 618px;
@@ -420,10 +537,12 @@ body {
                                 background-size: cover;
                                 background-position: center;
                                 transition: 0.3s ease-in-out;
+
                                 &:hover {
-                                background-image: url('/images/store/브랜드\ 소개.png');
+                                    background-image: url('/images/store/브랜드\ 소개.png');
                                 }
                             }
+
                             .no_result {
                                 display: none;
                                 padding: 20px;
@@ -433,9 +552,11 @@ body {
                             }
                         }
                     }
+
                     .store_sidebar {
 
                         width: 250px;
+
                         .store_search {
                             border-radius: 20px;
                             justify-content: space-between;
@@ -443,58 +564,135 @@ body {
                             background-color: #1C1B1F;
                             display: flex;
                             margin-bottom: 20px;
+
                             input {
-                                color: #fff;
-                                font-size: 12px;
+                                font-size: 0.875rem;
                                 background-color: #1C1B1F;
                                 padding: 5px 10px;
+                                &::placeholder {
+                                    color: #fff;            // ← placeholder 글씨 색 여기에 설정!
+                                }
                             }
+                            
+
                             button {
 
                                 background-color: #1C1B1F;
                                 cursor: pointer;
                             }
                         }
+
                         .store_list {
                             list-style: none;
                             padding: 0;
-                        
+
                             .store_item {
                                 position: relative; // ::after 절대위치 기준
                                 display: flex;
                                 justify-content: space-between;
-                                padding: 10px;
+                                padding: 15px 10px;
                                 cursor: pointer;
-                        
+                                font-size: 1.125rem;
                                 // 필요하면 hover 때 살짝 키우기
                                 transition: transform 0.3s ease;
-                        
+
                                 &::after {
                                     content: "";
                                     position: absolute;
                                     bottom: 0;
-                                    left: 0;          // 오른쪽에서 시작
-                                    width: 0;          // 처음에는 안 보이게
+                                    left: 0; // 오른쪽에서 시작
+                                    width: 0; // 처음에는 안 보이게
                                     height: 2px;
                                     background: black;
                                     transition: width 0.3s ease;
                                 }
-                        
+
                                 &:hover {
                                     // 선택사항
                                     // transform: scale(1.02);
-                        
+
                                     &::after {
-                                        width: 100%;   // 오른쪽 → 왼쪽으로 쭉
+                                        width: 100%; // 오른쪽 → 왼쪽으로 쭉
                                     }
                                 }
                             }
                         }
-                        
+
                     }
+
                     // 이미지 & 정보 
                 }
             }//store_page
         }//main
+        #footer {
+            width: 100%;
+            background-color: #1c1b1f;
+            padding: 50px 100px;
+            color: #ddd;
+            font-size: 0.875rem;
+        
+            .footer_inner {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 200px 1fr 1fr 1fr 100px;
+                gap: 40px;
+                align-items: flex-start;
+            }
+        
+            .footer_logo img {
+                width: 120px;
+                margin-bottom: 20px;
+            }
+        
+            .footer_col {
+                h3 {
+                    font-size: 0.9rem;
+                    margin-bottom: 15px;
+                    font-weight: 600;
+                    color: #ffffff;
+                }
+        
+                p {
+                    margin-bottom: 6px;
+                    line-height: 1.4;
+                    color: #ccc;
+                }
+        
+                .service_list {
+                    list-style: none;
+                    padding: 0;
+        
+                    li {
+                        margin-bottom: 8px;
+        
+                        a {
+                            color: #ccc;
+                            transition: 0.2s;
+        
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        
+            .footer_sns {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+        
+                a img {
+                    width: 28px;
+                    filter: brightness(0) invert(1); // 흰색 스타일
+                    transition: 0.3s;
+        
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }//footer
     }//wrap
 }//body
