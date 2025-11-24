@@ -33,9 +33,8 @@ body #wrap header nav {
   width: 100%;
   min-width: 1800px;
   position: fixed;
-  background: #fff;
-  padding: 0 80px;
-  border-bottom: 1px solid #ddd;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0 40px;
   display: grid;
   grid-template-columns: 145px 1fr 120px;
   align-items: center;
@@ -48,6 +47,10 @@ body #wrap header nav .gnb {
   text-align: center;
   list-style: none;
 }
+body #wrap header nav .my_box {
+  display: flex;
+  gap: 10px;
+}
 body #wrap header nav {
   /* 서브메뉴 */
 }
@@ -57,7 +60,7 @@ body #wrap header nav .sub_wrap {
   left: 0;
   width: 100%;
   padding: 25px 80px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   border-top: 1px solid #ddd;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
   display: none;
@@ -282,6 +285,9 @@ body #wrap main .common_slider .swiper {
 body #wrap main .common_slider .swiper-slide {
   text-align: center;
 }
+body #wrap main .common_slider .swiper-slide .product {
+  position: relative;
+}
 body #wrap main .common_slider .swiper-slide .product .rank {
   position: absolute;
   top: 5px;
@@ -308,6 +314,23 @@ body #wrap main .common_slider .swiper-slide .product .price .pro_price p {
   font-size: 1.125rem;
   font-weight: 500;
   text-align: start;
+}
+body #wrap main .common_slider .swiper-slide .sale_badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ff4466;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 body #wrap main .common_slider .swiper-button-next,
 body #wrap main .common_slider .swiper-button-prev {
@@ -399,6 +422,17 @@ body #wrap main #page6 .more {
   margin-bottom: 10px;
   text-align: end;
   padding: 0 150px;
+}
+body #wrap main #page6 .pro_price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+body #wrap main #page6 .original_price {
+  font-size: 14px;
+  color: #aaaaaa;
+  text-decoration: line-through;
+  margin-left: 5px;
 }
 body #wrap main #page7 {
   padding: 100px 0;

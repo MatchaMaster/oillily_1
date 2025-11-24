@@ -69,5 +69,17 @@ new Swiper(".swiperlookbook_slider", {
     freeMode: true,          // 자유롭게 드래그 가능
     loop: false,             // 반복 X (원하면 true)
 });
+/* 카테고리별 클릭시 이동/활성화하는 js */
+const tabs = document.querySelectorAll(".category_tabs li");
 
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+        // 기존 active 제거
+        tabs.forEach(t => t.classList.remove("active"));
+
+        // 클릭한 요소에 active 적용
+        tab.classList.add("active");
+    });
+});
 
