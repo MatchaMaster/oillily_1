@@ -566,13 +566,13 @@ body {
                             .image-box {
                                 width: 1146px;
                                 height: 618px;
-                                background-image: url('/images/store/Frame\ 176.png');
+                                background-image: url('../images/store/Frame\ 176.png');
                                 background-size: cover;
                                 background-position: center;
                                 transition: 0.3s ease-in-out;
 
                                 &:hover {
-                                    background-image: url('/images/store/브랜드\ 소개.png');
+                                    background-image: url('../images/store/브랜드\ 소개.png');
                                 }
                             }
 
@@ -650,9 +650,7 @@ body {
                                 }
                             }
                         }
-
                     }
-
                     // 이미지 & 정보 
                 }
             }//store_page
