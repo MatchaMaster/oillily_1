@@ -606,4 +606,118 @@ body #wrap #footer .footer_sns a img:hover {
   opacity: 0.6;
 }
 
+/* ============================
+    📱 Tablet Responsive  
+   ============================ */
+@media (max-width: 1024px) {
+  /* 공통 */
+  body {
+    overflow-x: hidden;
+  }
+  /* nav */
+  nav {
+    min-width: 100% !important;
+    padding: 0 20px !important;
+    grid-template-columns: 120px 1fr 80px !important;
+  }
+  nav .gnb {
+    grid-template-columns: repeat(9, auto);
+    gap: 18px;
+    font-size: 0.9rem;
+  }
+  nav .my_box img {
+    width: 22px;
+  }
+  /* 서브메뉴 */
+  nav .sub_wrap {
+    padding: 20px 40px !important;
+    grid-template-columns: repeat(9, minmax(60px, 1fr));
+  }
+  nav .sub {
+    padding-left: 0;
+    font-size: 13px;
+  }
+  /* 메인 비주얼 */
+  #main_visual img {
+    height: 60vh !important;
+    object-fit: cover;
+  }
+  /* Page2 */
+  #page2 .frame {
+    flex-direction: column;
+  }
+  #page2 a {
+    width: 100%;
+  }
+  /* 공통 슬라이더 */
+  .common_slider {
+    width: 100% !important;
+    padding: 0 20px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none; /* 태블릿에서는 버튼 숨김 */
+  }
+  .product img {
+    width: 100%;
+  }
+  .product .icons img {
+    width: 18px; /* 태블릿용 크기 */
+    height: 18px;
+  }
+  /* Lookbook */
+  #lookbook {
+    padding: 40px 40px !important;
+  }
+  .lookbook_slider_wrap .swiper-slide {
+    flex: 0 0 33.33% !important; /* 4개 → 3개 */
+  }
+  /* SALE */
+  #page6 .sale_badge {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+  /* 브랜드/ABOUT 섹션 */
+  #page7 .otherelse {
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* Store Page */
+  #storePage {
+    padding: 20px;
+  }
+  #storePage .store_wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+  #storePage .store_content .image-box {
+    width: 100% !important;
+    height: 400px !important; /* 태블릿에 맞게 축소 */
+  }
+  .store_sidebar {
+    width: 100% !important;
+    margin-top: 20px;
+  }
+  .store_search {
+    width: 100%;
+  }
+  .store_list .store_item {
+    font-size: 1rem;
+    padding: 12px 5px;
+  }
+  /* footer */
+  #footer {
+    padding: 40px 40px !important;
+  }
+  #footer .footer_inner {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+  .footer_sns {
+    flex-direction: row !important;
+    justify-content: flex-start;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
